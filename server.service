@@ -1,0 +1,15 @@
+---------------------------------------------------------------------
+/!\ WARNING /!\ The file below must be copied to /etc/systemd/system/
+---------------------------------------------------------------------
+
+[Unit]
+Description=Licinfo-Node-Server
+After=network.target
+
+[Service]
+User=pi
+ExecStart=/usr/bin/node /home/pi/freebox-node-server/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
